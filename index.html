@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+    }
+    .container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+
+
+    }
+    .container .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
+
+    .container .buttons .btn{
+        padding: 0 10px;
+        display:inline-flex;
+        background: grey;
+        color: white;
+        margin-left: 5px;
+        cursor: pointer;
+
+
+    }
+
+    .container .buttons .btn.active{
+        background: rgb(15, 15, 15);
+    }
+
+    .container .buttons .btn:nth-child(2){
+        font-size: 1.5rem;
+    }
+
+    .container .buttons .btn:nth-child(3){
+        font-size: 2rem;
+    }
+    .content{
+        transition: 0.5s;
+    }
+
+    
+</style>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <span class="btn" onclick="document.getElementById('text').style.fontSize='1rem'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize='1.25rem'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize='1.75rem'">A</span>
+
+        </div>
+        <div class="content" id="text">
+            <h2>Change font size</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum quam unde asperiores omnis iusto maxime aspernatur earum? Quo pariatur voluptatum aperiam hic earum architecto mollitia eligendi consequuntur quisquam eum, veritatis optio iste odit tempora enim error atque asperiores nihil maxime quidem aspernatur culpa nulla aut. Excepturi blanditiis dolore libero cupiditate iure harum aperiam saepe architecto quae perferendis sunt, voluptates inventore obcaecati nesciunt aliquid. Officia esse deserunt dolores possimus repellendus. Laborum mollitia itaque aperiam nihil eaque ex, corrupti perferendis eius quia et dolorum adipisci esse vel at magni ratione perspiciatis aut iure quibusdam! Maiores qui ratione quos. Est voluptatum officiis asperiores blanditiis eligendi sit in corrupti magnam, aliquid vero suscipit, laborum aperiam molestiae rerum repudiandae. Quis consectetur explicabo deleniti fugit corporis libero tempora dolore ullam eum voluptas a amet facilis consequuntur esse odio dolorum possimus, ut quae in repudiandae. Maiores ratione at eius, a laboriosam maxime quia amet? Ab eos maxime aliquid nam dignissimos perferendis ullam iste laboriosam? Pariatur, numquam tenetur! Suscipit maxime culpa sint ipsam natus soluta laudantium ut voluptatem illo rerum exercitationem corrupti vitae nostrum nemo doloribus non, ad labore saepe numquam itaque. Iure voluptate aut itaque voluptatibus ducimus alias distinctio error vel. Recusandae obcaecati asperiores vero ea ipsum quo, aut praesentium quidem itaque, eius cum? Amet non minima hic incidunt sapiente facere assumenda at, sint totam explicabo, neque maiores ullam enim autem modi numquam consequatur dicta iusto! Corporis placeat ratione totam fuga, sint libero natus eveniet, est id dicta quas reprehenderit rem vero tenetur exercitationem! Commodi quis esse dolorum porro, eveniet, recusandae ut voluptatibus reiciendis ea totam, tenetur iste? Officiis corrupti aperiam libero nesciunt soluta autem totam non? Placeat a, itaque laboriosam ducimus facere doloribus consequatur ut, commodi culpa deserunt cumque non nisi distinctio inventore illo. Vitae laudantium id natus minima sapiente laboriosam fugiat temporibus doloribus autem!</p>
+        </div>
+    </div>
+
+
+<script>
+    let buttons=document.querySelector('.buttons');
+    let btn=buttons.querySelectorAll(".btn");
+    for(var i=0;i<btn.length;i++){
+        btn[i].addEventListener("click",function(){
+            let current=document.getElementsByClassName('active');
+            current[0].className=current[0].className.replace("active","");
+            this.className+="active";
+        })
+    }
+
+</script>
+</body>
+</html>
